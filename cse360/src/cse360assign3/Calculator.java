@@ -7,7 +7,8 @@ package cse360assign3;
  *
  */
 
-public class Calculator {
+public class Calculator
+{
 
 	private int total;
 	
@@ -15,17 +16,19 @@ public class Calculator {
 	 * Creates a new Calculator object and sets total to 0
 	 * 
 	 */
-	public Calculator () {
+	public Calculator () 
+	{
 		total = 0;  // not needed - included for clarity
 	}
 	
 	/** 
-	 * getTotal-gives the total after arithmetic operations
+	 * getTotal-gives the current total
 	 * 
 	 * @return current total value
 	 */
-	public int getTotal () {
-		return 0;
+	public int getTotal () 
+	{
+		return this.total;
 	}
 	
 	/**
@@ -33,8 +36,9 @@ public class Calculator {
 	 * 
 	 * @param value to be added
 	 */
-	public void add (int value) {
-		
+	public void add (int value) 
+	{
+		total = total + value;
 	}
 	
 	/**
@@ -42,8 +46,9 @@ public class Calculator {
 	 * 
 	 * @param value to be subtracted
 	 */
-	public void subtract (int value) {
-		
+	public void subtract (int value) 
+	{
+		total = total - value;
 	}
 	
 	/**
@@ -51,8 +56,9 @@ public class Calculator {
 	 * 
 	 * @param value to be multiplied
 	 */
-	public void multiply (int value) {
-		
+	public void multiply (int value) 
+	{
+		total = total * value;
 	}
 	
 	/**
@@ -60,16 +66,26 @@ public class Calculator {
 	 * 
 	 * @param value to be divided
 	 */
-	public void divide (int value) {
+	public void divide (int value) 
+	{
+		if(value == 0)
+		{
+			total = 0;
+		}
 		
+		else
+		{
+			total = total / value;
+		}
 	}
 	
 	/** 
-	 * getHistory-return previous calculation totals from previous arithmetic operations.
+	 * getHistory-return previous calculation total from the last input.
 	 * 
-	 * @return previous total values in String form
+	 * @return previous total value in String form
 	 */
-	public String getHistory () {
+	public String getHistory () 
+	{
 		return "";
 	}
 }
