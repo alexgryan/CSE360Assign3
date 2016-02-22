@@ -1,6 +1,6 @@
 package cse360assign3;
 
-/** Class performs various arithmetic operations on values given
+/** Class performs various arithmetic operations (+ - * /) on values given
  * It can also return the history of those calculations
  * 
  * @author Alexander Ryan for CSE360 02/22/2016
@@ -11,14 +11,17 @@ public class Calculator
 {
 
 	private int total;
+	private String history; //Created to keep record of history
 	
 	/**
 	 * Creates a new Calculator object and sets total to 0
+	 * and sets history string to 0 
 	 * 
 	 */
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history = Integer.toString(0); //Default total of zero because no calculations have been performed
 	}
 	
 	/** 
@@ -39,6 +42,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		this.history = this.history + " + " + Integer.toString(value);
 	}
 	
 	/**
@@ -49,6 +53,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total = total - value;
+		this.history = this.history + " - " + Integer.toString(value);
 	}
 	
 	/**
@@ -59,6 +64,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total = total * value;
+		this.history = this.history + " * " + Integer.toString(value);
 	}
 	
 	/**
@@ -71,21 +77,23 @@ public class Calculator
 		if(value == 0)
 		{
 			total = 0;
+			this.history = this.history + " / " + Integer.toString(value);
 		}
 		
 		else
 		{
 			total = total / value;
+			this.history = this.history + " / " + Integer.toString(value);
 		}
 	}
 	
 	/** 
-	 * getHistory-return previous calculation total from the last input.
+	 * getHistory-return previous calculations from the previous inputs.
 	 * 
 	 * @return previous total value in String form
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return this.history;
 	}
 }
